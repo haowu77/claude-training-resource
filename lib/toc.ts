@@ -34,31 +34,6 @@ export function generateToc(markdown: string): TocItem[] {
 
     if (!title) return
 
-    // 跳过一些不应出现在目录的标题
-    const skipTitles = [
-      '📋 目录',
-      '目录结构',
-      // Agent 相关的非编号标题
-      'Agent 配置规范',
-      '示例 Agent 解析',
-      '创建自己的 Agent',
-      '更多 Agent 示例',
-      'Agent 最佳实践',
-      'Agent 管理',
-      '总结',
-      // 3.8 节的非编号标题
-      '核心哲学',
-      '沟通的艺术',
-      '明确性原则',
-      '迭代改进思维',
-      '信任与验证的平衡',
-      '上下文的力量',
-    ]
-    if (skipTitles.includes(title)) return
-
-    // 跳过以 # 开头的示例标题（如 # ❌ 模糊的请求）
-    if (title.startsWith('❌') || title.startsWith('✅')) return
-
     const id = slugify(title)
     const level = node.depth
 
