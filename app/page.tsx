@@ -224,9 +224,9 @@ export default function LandingPage() {
             <div className="text-zinc-600 text-xs mt-1">80人日 → 8人日</div>
           </div>
           <div className="glass-card p-6 rounded-2xl text-center">
-            <div className="text-4xl font-black gradient-text mb-2">50+</div>
-            <div className="text-zinc-400 text-sm">团队规模</div>
-            <div className="text-zinc-600 text-xs mt-1">成功转型案例</div>
+            <div className="text-4xl font-black gradient-text mb-2">200+</div>
+            <div className="text-zinc-400 text-sm">页培训教程</div>
+            <div className="text-zinc-600 text-xs mt-1">系统化教材</div>
           </div>
           <div className="glass-card p-6 rounded-2xl text-center">
             <div className="text-4xl font-black gradient-text mb-2">6月</div>
