@@ -330,7 +330,7 @@ export default function LandingPage() {
 
       {/* CTA Footer */}
       <footer className="py-20 px-6 text-center border-t border-zinc-900">
-        <h2 className="text-3xl md:text-4xl font-black mb-4">"让你的团队，也能体验 10 倍效率提升"</h2>
+        <h2 className="text-3xl md:text-4xl font-black mb-4">&ldquo;让你的团队，也能体验 10 倍效率提升&rdquo;</h2>
         <p className="text-zinc-500 mb-10 max-w-lg mx-auto">从传统开发到 AI Coding，我们提供完整的转型支持。</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
