@@ -196,7 +196,7 @@ export default function LandingPage() {
           <span className="text-3xl md:text-5xl text-zinc-400">从 80 人日降到 8 人日的实战方法论</span>
         </h1>
         <p className="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto mb-10 leading-relaxed">
-          半年时间，我成功将团队从传统开发转型为 <span className="text-white border-b border-amber-500">Vibe Coding</span> 模式。
+          在过去半年的实践中，我成功将团队从传统开发转型为 <span className="text-white border-b border-amber-500">Vibe Coding</span> 模式。
           现在，我将这套经过验证的方法论，通过<span className="text-white border-b border-amber-500">理论培训</span>、<span className="text-white border-b border-amber-500">实战指导</span>、<span className="text-white border-b border-amber-500">持续陪跑</span>三阶段服务，帮助你的团队完成转型。
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -229,9 +229,9 @@ export default function LandingPage() {
             <div className="text-zinc-600 text-xs mt-1">系统化教材</div>
           </div>
           <div className="glass-card p-6 rounded-2xl text-center">
-            <div className="text-4xl font-black gradient-text mb-2">6月</div>
-            <div className="text-zinc-400 text-sm">实战验证</div>
-            <div className="text-zinc-600 text-xs mt-1">方法论打磨</div>
+            <div className="text-4xl font-black gradient-text mb-2">半年+</div>
+            <div className="text-zinc-400 text-sm">实战打磨</div>
+            <div className="text-zinc-600 text-xs mt-1">经验沉淀</div>
           </div>
         </div>
       </section>
