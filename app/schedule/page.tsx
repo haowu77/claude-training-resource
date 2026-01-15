@@ -527,9 +527,8 @@ export default function SchedulePage() {
         </div>
 
         <div className="glass-card p-6 rounded-2xl">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="font-bold text-lg mb-4 text-green-500">按需答疑服务</h3>
+          <div>
+            <h3 className="font-bold text-lg mb-4 text-green-500">按需答疑服务</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-3 text-sm">
                   <span className="mt-1 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span>
@@ -544,14 +543,6 @@ export default function SchedulePage() {
                   <div><span className="text-zinc-300">进阶培训</span><span className="text-zinc-500"> · 根据团队需求定制进阶内容</span></div>
                 </li>
               </ul>
-            </div>
-            <div className="flex items-center justify-center">
-              <div className="text-center p-6 bg-zinc-900/50 rounded-xl">
-                <div className="text-4xl font-black text-green-500 mb-2">7×24</div>
-                <div className="text-zinc-400 text-sm">消息群持续服务</div>
-                <div className="text-zinc-600 text-xs mt-1">培训结束后保持联系</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
