@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowLeft, Clock, Users, Target, CheckCircle2, Calendar, MessageCircle, Award } from 'lucide-react'
+import { ArrowLeft, Clock, Users, Target, CheckCircle2, Calendar, MessageCircle, Award, Headphones } from 'lucide-react'
 import { useState } from 'react'
 
 interface Lesson {
@@ -103,51 +103,26 @@ const phase1Lessons: Lesson[] = [
 const phase2Weeks: Week[] = [
   {
     id: 1,
-    title: "产品规划与设计准备",
-    description: "项目启动、需求分析、技术方案设计",
+    title: "项目启动与核心开发",
+    description: "项目选题、需求分析、技术方案、开始开发",
     activities: [
       "Day 1-2：项目选题确认、需求分析、使用 Plan Mode 制定计划",
       "Day 3-4：技术方案设计、项目初始化、团队 CLAUDE.md 编写",
-      "Day 5：初期评审点评"
-    ],
-    review: {
-      title: "课时 7：初期评审点评",
-      duration: "2小时",
-      content: [
-        "各组展示（每组 15 分钟）：需求分析、技术方案、CLAUDE.md",
-        "导师点评：共性问题、改进建议、优秀实践分享",
-        "答疑 + 下周规划"
-      ],
-      criteria: [
-        { name: "需求分析", weight: "30%" },
-        { name: "技术方案", weight: "30%" },
-        { name: "CLAUDE.md 质量", weight: "25%" },
-        { name: "团队协作", weight: "15%" }
-      ]
-    }
-  },
-  {
-    id: 2,
-    title: "核心功能开发",
-    description: "完成核心功能 50%，主流程可演示",
-    activities: [
-      "每日站会：15 分钟进度同步",
-      "独立开发：使用 Claude Code 进行开发",
-      "线上答疑：遇到问题随时提问",
-      "周五：线上答疑会（30分钟）"
+      "Day 5：开始核心功能开发",
+      "线上答疑：遇到问题随时提问"
     ]
   },
   {
-    id: 3,
-    title: "中期评审与功能完善",
-    description: "功能开发与优化，接受中期评审反馈",
+    id: 2,
+    title: "功能开发与中期评审",
+    description: "核心功能开发，接受中期评审反馈",
     activities: [
-      "Day 1-3：继续功能开发",
-      "Day 4：中期评审",
+      "Day 1-3：核心功能开发、完成主流程",
+      "Day 4：中期评审（线上）",
       "Day 5：根据反馈改进调整"
     ],
     review: {
-      title: "课时 8：中期评审（给改进机会）",
+      title: "中期评审（线上）",
       duration: "2小时",
       content: [
         "各组进度汇报（每组 20 分钟）：功能演示、Claude Code 使用情况、遇到的问题",
@@ -163,20 +138,20 @@ const phase2Weeks: Week[] = [
     }
   },
   {
-    id: 4,
-    title: "最终评审与展示",
+    id: 3,
+    title: "完善与最终评审",
     description: "项目完善、文档整理、最终评审打分",
     activities: [
       "Day 1-3：项目最终完善、文档整理",
-      "Day 4：项目展示",
-      "Day 5：评审打分与总结"
+      "Day 4：最终评审与打分（线上）",
+      "Day 5：总结与后续安排"
     ],
     review: {
-      title: "课时 9-10：最终评审与打分",
-      duration: "4小时（2课时）",
+      title: "最终评审与打分（线上）",
+      duration: "3小时",
       content: [
         "各组完整展示（每组 25 分钟）：项目演示 + 技术分享 + Q&A",
-        "各组深度点评：项目亮点、改进空间、个人表现评价",
+        "导师深度点评：项目亮点、改进空间、个人表现评价",
         "优秀实践分享：最佳 CLAUDE.md、最佳工作流程、最佳 Agent 应用",
         "评分汇总与公布：团队排名、个人亮点表彰"
       ],
@@ -193,12 +168,10 @@ const phase2Weeks: Week[] = [
 ]
 
 const calendarData = [
-  { week: 1, title: "第 1 周", items: ["周一：课时 1 AI Coding 思维与基础操作", "周三：课时 2 命令行操作与斜线命令", "周五：课时 3 记忆系统与 CLAUDE.md"] },
-  { week: 2, title: "第 2 周", items: ["周一：课时 4 Plan Mode 与权限管理", "周三：课时 5 MCP 与 Agent 系统", "周五：课时 6 工作流程与实战准备"] },
-  { week: 3, title: "第 3 周（实训）", items: ["周一-周四：项目启动与设计准备", "周五：课时 7 初期评审点评"] },
-  { week: 4, title: "第 4 周（实训）", items: ["周一-周五：核心功能开发", "周五：线上答疑会"] },
-  { week: 5, title: "第 5 周（实训）", items: ["周一-周三：功能开发与优化", "周四：课时 8 中期评审", "周五：改进调整"] },
-  { week: 6, title: "第 6 周（实训）", items: ["周一-周三：最终完善", "周四：课时 9 项目展示", "周五：课时 10 评审打分与总结"] }
+  { week: 1, title: "第 1 周（线下）", items: ["Day 1：课时 1-2（AI 思维 + 命令行操作）", "Day 2：课时 3-4（记忆系统 + Plan Mode）", "Day 3：课时 5-6（MCP/Agent + 实战准备）"] },
+  { week: 2, title: "第 2 周（线上）", items: ["项目选题、需求分析、技术方案", "核心功能开发启动", "线上答疑支持"] },
+  { week: 3, title: "第 3 周（线上）", items: ["核心功能开发与完善", "中期评审（线上）", "根据反馈调整"] },
+  { week: 4, title: "第 4 周（线上）", items: ["项目最终完善、文档整理", "最终评审与打分（线上）", "总结与后续安排"] }
 ]
 
 export default function SchedulePage() {
@@ -232,34 +205,34 @@ export default function SchedulePage() {
           精确到课时的培训安排
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold mb-6">
-          <span className="gradient-text">6 周</span> 完整培训时间轴
+          <span className="gradient-text">4 周</span> 完整培训时间轴
         </h1>
         <p className="text-zinc-400 text-lg max-w-2xl mx-auto mb-8">
-          10 课时（20 小时）理论培训 + 4 周分组实训，带你的团队完成 AI Coding 转型
+          3 天线下集训 + 3 周线上陪跑，带你的团队完成 AI Coding 转型
         </p>
 
         {/* Overview Table */}
         <div className="glass-card rounded-2xl p-6 max-w-4xl mx-auto">
           <div className="grid grid-cols-4 gap-4 text-center">
             <div className="p-4">
-              <div className="text-3xl font-black gradient-text mb-1">10</div>
-              <div className="text-zinc-400 text-sm">课时</div>
-              <div className="text-zinc-600 text-xs">20 小时</div>
+              <div className="text-3xl font-black gradient-text mb-1">3</div>
+              <div className="text-zinc-400 text-sm">天线下</div>
+              <div className="text-zinc-600 text-xs">集中培训</div>
             </div>
             <div className="p-4">
-              <div className="text-3xl font-black gradient-text mb-1">6</div>
+              <div className="text-3xl font-black gradient-text mb-1">4</div>
               <div className="text-zinc-400 text-sm">周周期</div>
               <div className="text-zinc-600 text-xs">完整培训</div>
             </div>
             <div className="p-4">
-              <div className="text-3xl font-black gradient-text mb-1">3</div>
+              <div className="text-3xl font-black gradient-text mb-1">2</div>
               <div className="text-zinc-400 text-sm">次评审</div>
               <div className="text-zinc-600 text-xs">筛选人员</div>
             </div>
             <div className="p-4">
-              <div className="text-3xl font-black gradient-text mb-1">4</div>
+              <div className="text-3xl font-black gradient-text mb-1">3</div>
               <div className="text-zinc-400 text-sm">周实训</div>
-              <div className="text-zinc-600 text-xs">分组项目</div>
+              <div className="text-zinc-600 text-xs">线上陪跑</div>
             </div>
           </div>
         </div>
@@ -270,9 +243,10 @@ export default function SchedulePage() {
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center text-black font-bold text-xl">1</div>
           <div>
-            <h2 className="text-2xl font-bold">第一阶段：理论培训</h2>
-            <p className="text-zinc-400">6 课时 × 2 小时 = 12 小时 | 周期：2 周</p>
+            <h2 className="text-2xl font-bold">第一阶段：线下集训</h2>
+            <p className="text-zinc-400">6 课时 × 2 小时 = 12 小时 | 线下出差 3 天</p>
           </div>
+          <span className="ml-auto px-3 py-1 bg-amber-500/20 text-amber-500 text-xs font-bold rounded-full">线下</span>
         </div>
 
         <div className="space-y-4">
@@ -330,9 +304,10 @@ export default function SchedulePage() {
         <div className="flex items-center gap-4 mb-8">
           <div className="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center text-black font-bold text-xl">2</div>
           <div>
-            <h2 className="text-2xl font-bold">第二阶段：分组实训</h2>
-            <p className="text-zinc-400">4 周实训周期 | 3 次评审节点 | 10-20 人分 3-4 组</p>
+            <h2 className="text-2xl font-bold">第二阶段：线上陪跑</h2>
+            <p className="text-zinc-400">3 周实训周期 | 2 次评审节点 | 10-20 人分 3-4 组</p>
           </div>
+          <span className="ml-auto px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded-full">线上</span>
         </div>
 
         <div className="space-y-6">
@@ -490,41 +465,93 @@ export default function SchedulePage() {
             <MessageCircle className="w-6 h-6 text-amber-500" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold">线上答疑安排</h2>
-            <p className="text-zinc-400">贯穿两阶段的持续支持</p>
+            <h2 className="text-2xl font-bold">答疑支持安排</h2>
+            <p className="text-zinc-400">贯穿全程的持续支持</p>
           </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="glass-card p-6 rounded-2xl">
-            <h3 className="font-bold text-lg mb-4 text-amber-500">第一阶段</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <h3 className="font-bold text-lg text-amber-500">线下培训期间</h3>
+              <span className="px-2 py-0.5 bg-amber-500/20 text-amber-500 text-xs rounded-full">3 天</span>
+            </div>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm">
                 <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                <div><span className="text-zinc-300">即时消息群</span><span className="text-zinc-500"> · 每节课后 24 小时课后问题快速解答</span></div>
+                <div><span className="text-zinc-300">现场答疑</span><span className="text-zinc-500"> · 培训过程中即时解答</span></div>
               </li>
               <li className="flex items-start gap-3 text-sm">
                 <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                <div><span className="text-zinc-300">预约答疑</span><span className="text-zinc-500"> · 课间按需，实操遇到的复杂问题</span></div>
+                <div><span className="text-zinc-300">实操指导</span><span className="text-zinc-500"> · 动手练习时一对一辅导</span></div>
+              </li>
+              <li className="flex items-start gap-3 text-sm">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                <div><span className="text-zinc-300">分组讨论</span><span className="text-zinc-500"> · 实训项目准备与规划</span></div>
               </li>
             </ul>
           </div>
           <div className="glass-card p-6 rounded-2xl">
-            <h3 className="font-bold text-lg mb-4 text-amber-500">第二阶段</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <h3 className="font-bold text-lg text-blue-400">线上陪跑期间</h3>
+              <span className="px-2 py-0.5 bg-blue-500/20 text-blue-400 text-xs rounded-full">3 周</span>
+            </div>
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                <div><span className="text-zinc-300">即时消息群</span><span className="text-zinc-500"> · 每日工作时间，开发中的即时问题</span></div>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <div><span className="text-zinc-300">即时消息群</span><span className="text-zinc-500"> · 工作时间随时提问</span></div>
               </li>
               <li className="flex items-start gap-3 text-sm">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                <div><span className="text-zinc-300">每周答疑会</span><span className="text-zinc-500"> · 每周五 30 分钟，共性问题集中解答</span></div>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <div><span className="text-zinc-300">每周答疑会</span><span className="text-zinc-500"> · 共性问题集中解答</span></div>
               </li>
               <li className="flex items-start gap-3 text-sm">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                <div><span className="text-zinc-300">评审前答疑</span><span className="text-zinc-500"> · 评审前 1-2 天，准备阶段重点指导</span></div>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-400 flex-shrink-0"></span>
+                <div><span className="text-zinc-300">评审前指导</span><span className="text-zinc-500"> · 评审前重点辅导</span></div>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Follow-up Support Section */}
+      <section className="py-16 px-6 max-w-6xl mx-auto">
+        <div className="flex items-center gap-4 mb-8">
+          <div className="w-12 h-12 bg-green-500/20 rounded-2xl flex items-center justify-center">
+            <Headphones className="w-6 h-6 text-green-500" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold">后续持续支持</h2>
+            <p className="text-zinc-400">陪跑结束后按需继续答疑</p>
+          </div>
+        </div>
+
+        <div className="glass-card p-6 rounded-2xl">
+          <div className="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-bold text-lg mb-4 text-green-500">按需答疑服务</h3>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3 text-sm">
+                  <span className="mt-1 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span>
+                  <div><span className="text-zinc-300">线上答疑</span><span className="text-zinc-500"> · 消息群或视频会议，灵活安排</span></div>
+                </li>
+                <li className="flex items-start gap-3 text-sm">
+                  <span className="mt-1 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span>
+                  <div><span className="text-zinc-300">线下辅导</span><span className="text-zinc-500"> · 按需出差，深度问题现场解决</span></div>
+                </li>
+                <li className="flex items-start gap-3 text-sm">
+                  <span className="mt-1 w-1.5 h-1.5 rounded-full bg-green-500 flex-shrink-0"></span>
+                  <div><span className="text-zinc-300">进阶培训</span><span className="text-zinc-500"> · 根据团队需求定制进阶内容</span></div>
+                </li>
+              </ul>
+            </div>
+            <div className="flex items-center justify-center">
+              <div className="text-center p-6 bg-zinc-900/50 rounded-xl">
+                <div className="text-4xl font-black text-green-500 mb-2">7×24</div>
+                <div className="text-zinc-400 text-sm">消息群持续服务</div>
+                <div className="text-zinc-600 text-xs mt-1">培训结束后保持联系</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -536,16 +563,16 @@ export default function SchedulePage() {
             <Calendar className="w-6 h-6 text-amber-500" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold">6 周培训日历</h2>
+            <h2 className="text-2xl font-bold">4 周培训日历</h2>
             <p className="text-zinc-400">完整的时间安排总览</p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {calendarData.map((week) => (
-            <div key={week.week} className="glass-card p-5 rounded-2xl">
+            <div key={week.week} className={`glass-card p-5 rounded-2xl ${week.week === 1 ? 'border border-amber-500/30' : 'border border-blue-500/20'}`}>
               <div className="flex items-center gap-2 mb-3">
-                <span className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm ${week.week <= 2 ? 'bg-amber-500 text-black' : 'bg-zinc-800 text-amber-500'}`}>
+                <span className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm ${week.week === 1 ? 'bg-amber-500 text-black' : 'bg-blue-500/20 text-blue-400'}`}>
                   {week.week}
                 </span>
                 <span className="font-bold">{week.title}</span>
@@ -553,7 +580,7 @@ export default function SchedulePage() {
               <ul className="space-y-2">
                 {week.items.map((item, idx) => (
                   <li key={idx} className="text-sm text-zinc-400 flex items-start gap-2">
-                    <span className="mt-1.5 w-1 h-1 rounded-full bg-zinc-600 flex-shrink-0"></span>
+                    <span className={`mt-1.5 w-1 h-1 rounded-full flex-shrink-0 ${week.week === 1 ? 'bg-amber-500' : 'bg-blue-400'}`}></span>
                     {item}
                   </li>
                 ))}
