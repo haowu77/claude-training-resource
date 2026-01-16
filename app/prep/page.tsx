@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowLeft, User, Users, Code, TestTube, CheckCircle2, Globe, Key, Wifi, ExternalLink } from 'lucide-react'
+import { ArrowLeft, User, Users, Code, TestTube, CheckCircle2, Key, ExternalLink } from 'lucide-react'
 import { useState } from 'react'
 
 const roles = [
@@ -14,7 +14,6 @@ const roles = [
 const checklistItems = [
   { id: 'account', label: '已注册 Anthropic 账号' },
   { id: 'login', label: '可正常登录 claude.ai' },
-  { id: 'network', label: '网络环境稳定可用' },
   { id: 'browser', label: '使用 Chrome 或 Edge 浏览器' }
 ]
 
@@ -81,7 +80,9 @@ export default function PrepPage() {
       {/* Claude Account Preparation */}
       <section className="py-12 px-6 max-w-6xl mx-auto">
         <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center text-black font-bold text-xl">1</div>
+          <div className="w-12 h-12 bg-amber-500/20 rounded-2xl flex items-center justify-center">
+            <Key className="w-6 h-6 text-amber-500" />
+          </div>
           <div>
             <h2 className="text-2xl font-bold">Claude 账号准备</h2>
             <p className="text-zinc-400">注册并验证你的 Anthropic 账号</p>
@@ -140,68 +141,6 @@ export default function PrepPage() {
                 </div>
                 <p className="text-zinc-400">更高使用限额，优先访问新功能</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Network Environment */}
-      <section className="py-12 px-6 max-w-6xl mx-auto">
-        <div className="flex items-center gap-4 mb-8">
-          <div className="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center text-black font-bold text-xl">2</div>
-          <div>
-            <h2 className="text-2xl font-bold">网络环境准备</h2>
-            <p className="text-zinc-400">确保可以稳定访问 Claude 服务</p>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <div className="glass-card p-6 rounded-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <Globe className="w-5 h-5 text-amber-500" />
-              <h3 className="font-bold text-lg">网络要求</h3>
-            </div>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0" />
-                <span className="text-zinc-300">能够正常访问 claude.ai 网站</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0" />
-                <span className="text-zinc-300">网络延迟较低，连接稳定</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0" />
-                <span className="text-zinc-300">如需代理，请提前配置并测试</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0" />
-                <span className="text-zinc-300">推荐使用 Chrome 或 Edge 浏览器</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="glass-card p-6 rounded-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <Wifi className="w-5 h-5 text-amber-500" />
-              <h3 className="font-bold text-lg">连接测试</h3>
-            </div>
-            <div className="space-y-4 text-sm">
-              <p className="text-zinc-400">请在培训前完成以下测试：</p>
-              <ol className="space-y-2">
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
-                  <span className="text-zinc-300">打开 claude.ai 并登录</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
-                  <span className="text-zinc-300">发送一条测试消息</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="w-5 h-5 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
-                  <span className="text-zinc-300">确认响应正常且速度可接受</span>
-                </li>
-              </ol>
             </div>
           </div>
         </div>
