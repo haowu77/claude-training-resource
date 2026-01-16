@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowLeft, User, Users, Code, TestTube, CheckCircle2, Key, ExternalLink } from 'lucide-react'
+import { ArrowLeft, User, Users, Code, TestTube, CheckCircle2, Key, ExternalLink, Terminal } from 'lucide-react'
 import { useState } from 'react'
 
 const roles = [
@@ -14,7 +14,8 @@ const roles = [
 const checklistItems = [
   { id: 'account', label: '已注册 Anthropic 账号' },
   { id: 'login', label: '可正常登录 claude.ai' },
-  { id: 'browser', label: '使用 Chrome 或 Edge 浏览器' }
+  { id: 'browser', label: '使用 Chrome 或 Edge 浏览器' },
+  { id: 'cli', label: '已安装配置 Claude Code CLI' }
 ]
 
 export default function PrepPage() {
@@ -140,6 +141,74 @@ export default function PrepPage() {
                   <span className="text-amber-500 text-xs">$20/月</span>
                 </div>
                 <p className="text-zinc-400">更高使用限额，优先访问新功能</p>
+              </div>
+              <div className="p-4 bg-zinc-900/50 rounded-xl border border-blue-500/30">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold text-blue-400">Max 版（多人共享）</span>
+                  <span className="text-blue-400 text-xs">$100/月起</span>
+                </div>
+                <p className="text-zinc-400">团队共享账号，适合企业培训使用</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Claude Code CLI Preparation */}
+      <section className="py-12 px-6 max-w-6xl mx-auto">
+        <div className="flex items-center gap-4 mb-8">
+          <div className="w-12 h-12 bg-amber-500/20 rounded-2xl flex items-center justify-center">
+            <Terminal className="w-6 h-6 text-amber-500" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold">Claude Code CLI 准备</h2>
+            <p className="text-zinc-400">安装并配置命令行工具</p>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="glass-card p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <Terminal className="w-5 h-5 text-amber-500" />
+              <h3 className="font-bold text-lg">安装步骤</h3>
+            </div>
+            <ol className="space-y-3 text-sm">
+              <li className="flex items-start gap-3">
+                <span className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">1</span>
+                <span className="text-zinc-300">确保已安装 Node.js 18+</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">2</span>
+                <div className="text-zinc-300">
+                  运行安装命令：
+                  <code className="block mt-2 px-3 py-2 bg-zinc-800 rounded-lg text-amber-500 text-xs">npm install -g @anthropic-ai/claude-code</code>
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">3</span>
+                <span className="text-zinc-300">运行 claude 启动认证流程</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-6 h-6 bg-zinc-800 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">4</span>
+                <span className="text-zinc-300">在浏览器中完成 OAuth 授权</span>
+              </li>
+            </ol>
+          </div>
+
+          <div className="glass-card p-6 rounded-2xl">
+            <div className="flex items-center gap-3 mb-4">
+              <Code className="w-5 h-5 text-amber-500" />
+              <h3 className="font-bold text-lg">验证安装</h3>
+            </div>
+            <div className="space-y-4 text-sm">
+              <p className="text-zinc-400">安装完成后，在终端运行以下命令验证：</p>
+              <code className="block px-3 py-2 bg-zinc-800 rounded-lg text-amber-500 text-xs">claude --version</code>
+              <p className="text-zinc-400">如果显示版本号，说明安装成功。</p>
+              <div className="mt-4 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl">
+                <p className="text-amber-500 text-xs">
+                  详细安装指南请参考
+                  <Link href="/docs" className="underline ml-1">培训教程</Link>
+                </p>
               </div>
             </div>
           </div>
