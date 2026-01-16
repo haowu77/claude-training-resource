@@ -153,12 +153,17 @@ export default function SchedulePage() {
           <div className="w-8 h-8 bg-amber-500 rounded-lg flex items-center justify-center font-bold text-black">C</div>
           <span className="font-bold text-xl tracking-tight">培训<span className="text-amber-500">安排</span></span>
         </div>
-        <Link
-          href="/docs"
-          className="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-zinc-200 transition-all"
-        >
-          查看教程
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/prep" className="text-zinc-400 hover:text-amber-500 text-sm font-medium transition-colors">
+            课前准备
+          </Link>
+          <Link
+            href="/docs"
+            className="bg-white text-black px-5 py-2 rounded-full text-sm font-bold hover:bg-zinc-200 transition-all"
+          >
+            查看教程
+          </Link>
+        </div>
       </nav>
 
       {/* Hero */}
