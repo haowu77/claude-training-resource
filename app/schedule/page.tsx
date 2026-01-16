@@ -192,7 +192,7 @@ export default function SchedulePage() {
               <div className="text-zinc-600 text-xs">完整培训</div>
             </div>
             <div className="p-4">
-              <div className="text-3xl font-black gradient-text mb-1">1</div>
+              <div className="text-3xl font-black gradient-text mb-1">2</div>
               <div className="text-zinc-400 text-sm">次评审</div>
               <div className="text-zinc-600 text-xs">筛选人员</div>
             </div>
@@ -272,7 +272,7 @@ export default function SchedulePage() {
           <div className="w-12 h-12 bg-amber-500 rounded-2xl flex items-center justify-center text-black font-bold text-xl">2</div>
           <div>
             <h2 className="text-2xl font-bold">第二阶段：线上陪跑</h2>
-            <p className="text-zinc-400">1 周实训周期 | 1 次评审节点 | 10-20 人分 3-4 组</p>
+            <p className="text-zinc-400">1 周实训周期 | 2 次评审节点 | 10-20 人分 3-4 组</p>
           </div>
           <span className="ml-auto px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded-full">线上</span>
         </div>
