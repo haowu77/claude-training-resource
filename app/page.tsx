@@ -179,6 +179,7 @@ export default function LandingPage() {
           <a href="#faq" className="hover:text-amber-500 transition-colors">常见问题</a>
           <Link href="/prep" className="hover:text-amber-500 transition-colors">课前准备</Link>
           <Link href="/schedule" className="hover:text-amber-500 transition-colors">培训安排</Link>
+          <Link href="/updates" className="hover:text-amber-500 transition-colors">近期更新</Link>
         </div>
         <Link
           href="/docs"
