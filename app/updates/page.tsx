@@ -174,6 +174,20 @@ const updates: Update[] = [
       '启用方式：设置 CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS 环境变量或 settings.json',
       '实验性功能，默认关闭，需手动开启'
     ]
+  },
+  {
+    id: 10,
+    title: 'Agent Teams 示例项目：ClaudeAgents',
+    date: '3月',
+    category: '生态更新',
+    categoryColor: 'cyan',
+    summary: '开源示例项目 ClaudeAgents 发布，包含 Claude Code CLI 自定义 Agent 定义，可作为 Agent Teams 实践参考。',
+    highlights: [
+      '仓库地址：github.com/haowu77/ClaudeAgents',
+      '包含 Claude Code CLI agents 定义示例',
+      '可作为 Agent Teams 功能的实践参考和起步模板',
+      '学习如何定义和配置自定义 Agent 角色'
+    ]
   }
 ]
 
@@ -204,12 +218,12 @@ const tutorials: Tutorial[] = [
   {
     id: 2,
     title: 'Agent Teams 多智能体协作入门',
-    relatedUpdateIds: [9],
-    description: '学习如何启用 Agent Teams 实验性功能，让多个 Claude Code 实例协同工作。',
+    relatedUpdateIds: [9, 10],
+    description: '学习如何启用 Agent Teams 实验性功能，并参考 ClaudeAgents 示例项目快速上手。',
     steps: [
       '确保 Claude Code 已更新到 v2.1.32 或更新版本',
       '通过环境变量或 settings.json 启用 Agent Teams 功能',
-      '在对话中描述需要并行处理的复杂任务',
+      '参考 ClaudeAgents 示例项目了解自定义 Agent 定义方式',
       'Claude 会创建 team lead 和多个 teammate，各自有独立上下文窗口',
       'Team lead 负责分配任务并汇总各 teammate 的结果'
     ],
@@ -224,14 +238,17 @@ const tutorials: Tutorial[] = [
 # 方式二：通过环境变量启用
 export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
 
+# 示例项目参考：
+# github.com/haowu77/ClaudeAgents
+# 包含 Claude Code CLI 自定义 Agent 定义示例
+
 # 启用后，处理复杂任务时 Claude 会自动使用团队模式
-# 例如：
 "请帮我完成以下任务：
 1. 重构 auth 模块的错误处理
 2. 为 API 层添加单元测试
 3. 更新 README 文档
 这些任务相互独立，请并行处理。"`,
-    tip: 'Agent Teams 是实验性功能，默认关闭。最适合处理多个相互独立的子任务，如果任务之间有依赖关系，建议按顺序处理。'
+    tip: 'Agent Teams 是实验性功能，默认关闭。可参考 github.com/haowu77/ClaudeAgents 了解自定义 Agent 定义。最适合处理多个相互独立的子任务。'
   },
   {
     id: 3,
